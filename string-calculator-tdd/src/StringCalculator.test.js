@@ -9,5 +9,13 @@ describe("String Calculator", () => {
         expect(add("1")).toBe(1);
     });
 
+    test("returns the sum of two numbers", () => {
+        expect(add("1,2")).toBe(3);
+    });
+
+    test("handles multiple numbers", () => {
+        expect(add("1,2,3,4")).toBe(10);
+    });
+
 
 });

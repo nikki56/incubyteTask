@@ -4,7 +4,8 @@ import React, { useState } from "react";
 export function add(numbers) {
     if (!numbers) return 0;
 
-    return parseInt(numbers, 10) ;
+    let numArray = numbers.split(",").map(num => parseInt(num, 10));
+    return numArray.reduce((sum, num) => sum + num, 0);
 }
 
 
