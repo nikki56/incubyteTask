@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 
-function add(numbers) {
-
+export function add(numbers) {
+    if (!numbers) return 0;
     return `ADDITION : ${numbers}` ;
 }
 
 
-const StringCalculator = () => {
+export const StringCalculator = () => {
 
     const [input, setInput] = useState("");
     const [result, setResult] = useState(null);
@@ -47,4 +47,4 @@ const StringCalculator = () => {
     );
 };
 
-export default StringCalculator;
+// export StringCalculator;
