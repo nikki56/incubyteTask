@@ -3,7 +3,8 @@ import React, { useState } from "react";
 
 export function add(numbers) {
     if (!numbers) return 0;
-    return `ADDITION : ${numbers}` ;
+
+    return parseInt(numbers, 10) ;
 }
 
 

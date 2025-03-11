@@ -5,4 +5,9 @@ describe("String Calculator", () => {
         expect(add("")).toBe(0);
     });
 
+    test("returns the number itself for a single number", () => {
+        expect(add("1")).toBe(1);
+    });
+
+
 });
