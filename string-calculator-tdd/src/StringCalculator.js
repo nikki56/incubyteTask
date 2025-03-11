@@ -2,8 +2,6 @@ import React, { useState } from "react";
 
 
 export function add(numbers) {
-    if (!numbers) return 0;
-
     let delimiter = /,|\n/;
     let customDelimiterMatch = numbers.match(/^\/\/(.+)\n/);
 
@@ -13,7 +11,14 @@ export function add(numbers) {
     }
 
     let numArray = numbers.split(delimiter).map(num => parseInt(num, 10));
-    return numArray.reduce((sum, num) => sum + num, 0);
+
+    let negatives = numArray.filter(num => num < 0);
+    if (negatives.length > 0) {
+        throw new Error(`negative numbers not allowed ${negatives.join(", ")}`);
+    }
+
+    return numArray.reduce((sum, num) => sum + (isNaN(num) ? 0 : num), 0);
+
 }
 
 
